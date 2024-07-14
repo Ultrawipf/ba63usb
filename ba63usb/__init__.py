@@ -51,7 +51,7 @@ class BA63USB:
         msg = bytes([0x1B,0x5B,row | 0x30,0x3B,col | 0x30,0x48])
         self.transmit(msg)
 
-    def print(self,msg : str,row : int,col : int):
+    def print_at(self,msg : str,row : int,col : int):
         """Prints a message at the specified cursor position (Count starts at 1)"""
         self.set_cursor(row,col)
         self.print(msg)
