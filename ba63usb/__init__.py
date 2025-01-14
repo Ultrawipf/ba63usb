@@ -27,7 +27,7 @@ class BA63USB:
 
     def transmit(self,msg : bytes):
         """Sends a text or control sequence"""
-        self._device.write(b'\x02\x00'+bytes([len(msg)])+msg)
+        self._device.write(b'\x00\x02\x00'+bytes([len(msg)])+msg)
 
     def __del__(self):
         self._device.close()
